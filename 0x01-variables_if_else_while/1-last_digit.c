@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <stdlib.h>
 /**
- * main - strat point
- * Program will print whether variable n is 0 < 5 > 6
- * Return:0
- */
+ *main - strat point
+ *Program will print whether variable n is 0 < 5 > 6
+ *Return:0
+*/
 
 int main(void)
 {
