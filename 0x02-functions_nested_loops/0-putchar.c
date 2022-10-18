@@ -1,11 +1,11 @@
 #include "main.h"
-
 /**
- * main -  Main block
- * Description: Print _putchar.c
- * Return: Always 0 (Success)
+ * main - starting point
+ *
+ * program that prints _putchar, followed by a new line.
+ *
+ * Return:0
  */
-
 int main(void)
 {
 	_putchar('_');
