@@ -3,36 +3,58 @@
 #include "main.h"
 
 /**
- * argstostr - function that concatenates all the arguments of your program
- * @ac: first argument
- * @av: second argument
+ * alloc_grid -returns a pointer to a 2D array of ints
+ * @width: width
+ * @height: height
  * Return: pointer or NULL if it fails
  */
-char *argstostr(int ac, char **av)
+int **alloc_grid(int width, int height)
 {
-	if (ac == 0 || av == NULL)
+	int freenum;
+
+	int x;
+
+	int y;
+
+	int i;
+
+	int **arr;
+
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	for (; i < ac; i++, nc++)
-		nc += strlen(av[i]);
+	arr = malloc(sizeof(int *) * height);
 
-	s = malloc(sizeof(char) * nc + 1);
+	if (arr == NULL)
+		return (NULL);
 
-	if (s == 0)
-
-	return (NULL);
-
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < height; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+		 arr[i] = malloc(sizeof(int) * width);
 
-		s[cmpt] = av[i][j];
+		 if (arr[i] == NULL)
+		 {
+			 for (freenum = 0; freenum < i; freenum++)
+			 {
+				 free(arr[freenum]);
+			 }
+			 free(arr);
 
-		s[cmpt] = '\n';
-
-		cmpt++;
+			 return (NULL);
+		 }
 	}
-	s[cmpt] = '\0';
-
-	return (s);
+	for (x = 0; x < height; x++)
+	{
+		for (y = 0; y < width; y++)
+		{
+			arr[x][y] = 0;
+		}
+	}
+	return (arr);
 }
+
+
+
+
+
+
